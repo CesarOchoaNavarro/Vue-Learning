@@ -17,10 +17,12 @@
 
   <!-- PageViewer component that we imported from components -->
   <!-- passing data to components -->
-  <page-viewer 
+  <!-- <page-viewer 
     v-if="pages.length > 0"
     :page="pages[activePage]"
-  ></page-viewer>
+  ></page-viewer> -->
+
+
 </template>
 
 <script>

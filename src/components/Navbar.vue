@@ -33,6 +33,9 @@ export default {
   components: {
     NavbarLink
   },
+  created() { // created loads after options API but before the page has actually rendered
+    this.getThemeSettings()
+  },
   //navLinkClick is a function that executes on click passing the current index to child ()
   props: ['pages', 'activePage', 'navLinkClick'],
   data() {
@@ -49,6 +52,18 @@ export default {
       }
 
       this.theme = theme
+      this.storeThemeSettings();
+    },
+    storeThemeSettings() {
+      localStorage.setItem('theme', this.theme)
+    },
+    getThemeSettings() {
+      let theme = localStorage.getItem('theme')
+
+      if (theme) {
+        this.theme = theme
+      }
+
     }
   }
 }
