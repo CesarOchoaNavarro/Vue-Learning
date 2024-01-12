@@ -22,6 +22,11 @@
     :page="pages[activePage]"
   ></page-viewer> -->
 
+  <!-- Forms -->
+  <create-page
+    :page-created="pageCreated"
+  ></create-page>
+
 
 </template>
 
@@ -29,13 +34,15 @@
 // Imports
 import PageViewer from './components/PageViewer.vue';
 import Navbar from './components/Navbar.vue';
+import CreatePage from './components/CreatePage.vue';
 
 // These are our options data
 // We will import this to main.js
 export default {
   components: {
     PageViewer,
-    Navbar
+    Navbar,
+    CreatePage
   },
   created() {
     this.getPages()
@@ -54,6 +61,9 @@ export default {
       let data = await res.json();
 
       this.pages = data
+    },
+    pageCreated(pageObj) {
+      console.log(pageObj)
     }
   }
 }
