@@ -1,0 +1,17 @@
+[
+  {
+    "link": { "text": "Home", "url": "index.html"},
+    "pageTitle": "Home",
+    "pageContent": "This is the Home Page"
+  },
+  {
+    "link": { "text": "About", "url": "about.html"},
+    "pageTitle": "About",
+    "pageContent": "This is the About Page"
+  },
+  {
+    "link": { "text": "Contact", "url": "contact.html"},
+    "pageTitle": "Contact",
+    "pageContent": "This is the Contact Page"
+  }
+]
