@@ -8,7 +8,6 @@
   <navbar 
     :pages="pages" 
     :active-page="activePage"
-    :nav-link-click="(index) => activePage = index"
   ></navbar>
 
   <div 
@@ -17,10 +16,10 @@
 
   <!-- PageViewer component that we imported from components -->
   <!-- passing data to components -->
-  <!-- <page-viewer 
+  <page-viewer 
     v-if="pages.length > 0"
     :page="pages[activePage]"
-  ></page-viewer> -->
+  ></page-viewer>
 
   <!-- Forms -->
 
@@ -47,7 +46,10 @@ export default {
     CreatePage
   },
   created() {
-    this.getPages()
+    this.getPages(),
+    this.$bus.$on('navbarLinkActivated', (index) => {
+      this.activePage = index
+    })
   },
   data() {
     return {

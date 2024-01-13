@@ -5,14 +5,13 @@
 
       <div class="collapse navbar-collapse" id="navbarSupportedContent">
         <ul class="navbar-nav me-auto">
-          <li v-for="(page, index) in publishedPages" class="nav-item" :key="index">
-            <navbar-link
-              :page="page"
-              :isActive="activePage == index"
-              @click.prevent="navLinkClick(index)"
-            ></navbar-link>
-          </li>
-
+          <navbar-link
+            v-for="(page, index) in publishedPages" class="nav-item" :key="index"
+            :page="page"
+            :index="index"
+            :isActive="activePage == index"
+            @activated="$emit('activated')"
+          ></navbar-link>
         </ul>
         <form class="d-flex">
           <button class="btn btn-primary" 
@@ -44,7 +43,7 @@ export default {
     }
   },
   //navLinkClick is a function that executes on click passing the current index to child ()
-  props: ['pages', 'activePage', 'navLinkClick'],
+  props: ['pages', 'activePage'],
   data() {
     return {
       theme: 'dark',
