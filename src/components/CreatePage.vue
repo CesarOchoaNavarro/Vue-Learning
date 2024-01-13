@@ -108,6 +108,13 @@ export default {
         this.LinkUrl = '',
         this.published = true
       }
+    },
+    watch: {
+      pageTitle(newTitle, oldTitle) {
+        if (this.LinkText === oldTitle) {
+          this.LinkText = newTitle;
+        }
+      }
     }
 }
 
