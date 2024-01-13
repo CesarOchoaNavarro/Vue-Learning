@@ -23,8 +23,10 @@
   ></page-viewer> -->
 
   <!-- Forms -->
+
+  <!-- Setting up a custom page-handler event(@) that we are handling with the function pageCreated -->
   <create-page
-    :page-created="pageCreated"
+    @page-created="pageCreated"
   ></create-page>
 
 

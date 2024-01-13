@@ -70,7 +70,23 @@
 <script>
 
 export default {
-    props: ['pageCreated'],
+    emits: {
+      pageCreated(pageTitle, content, link, published) {
+        if (!pageTitle) {
+          return false
+        }
+
+        if(!content) {
+          return false
+        }
+
+        if(!link || !link.text || !link.url) {
+          return false
+        }
+
+        return true
+      } 
+    },
     computed: {
       isFormInvalid() {
         return !this.pageTitle || !this.content || !this.LinkText || !this.LinkUrl;
@@ -92,7 +108,10 @@ export default {
           return
         }
 
-        this.pageCreated({
+        // $ (public property)
+        // emitting a page passing the first arg which is the name of the event that we want to emit and that will emit that event
+        // second argument is passing the object that is created when event is handled
+        this.$emit('pageCreated', {
           pageTitle: this.pageTitle,
           content: this.content,
           link: {
