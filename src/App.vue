@@ -10,23 +10,21 @@
     :active-page="activePage"
   ></navbar>
 
-  <div 
-    v-show="false"
-  >Content to Hide</div>
+  <router-view></router-view>
 
   <!-- PageViewer component that we imported from components -->
   <!-- passing data to components -->
-  <page-viewer 
+  <!-- <page-viewer 
     v-if="pages.length > 0"
     :page="pages[activePage]"
-  ></page-viewer>
+  ></page-viewer> -->
 
   <!-- Forms -->
 
   <!-- Setting up a custom page-handler event(@) that we are handling with the function pageCreated -->
-  <create-page
+  <!-- <create-page
     @page-created="pageCreated"
-  ></create-page>
+  ></create-page> -->
 
 
 </template>
