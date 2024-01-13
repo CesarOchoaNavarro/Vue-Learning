@@ -63,7 +63,8 @@ export default {
       this.pages = data
     },
     pageCreated(pageObj) {
-      console.log(pageObj)
+      // Pushing new page item to pages array
+      this.pages.push(pageObj)
     }
   }
 }

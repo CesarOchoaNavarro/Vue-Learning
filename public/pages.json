@@ -2,16 +2,20 @@
   {
     "link": { "text": "Home", "url": "index.html"},
     "pageTitle": "Home",
-    "pageContent": "This is the Home Page"
+    "pageContent": "This is the Home Page",
+    "published": true
   },
   {
     "link": { "text": "About", "url": "about.html"},
     "pageTitle": "About",
-    "pageContent": "This is the About Page"
+    "pageContent": "This is the About Page",
+    "published": true
+
   },
   {
     "link": { "text": "Contact", "url": "contact.html"},
     "pageTitle": "Contact",
-    "pageContent": "This is the Contact Page"
+    "pageContent": "This is the Contact Page",
+    "published": false
   }
 ]
